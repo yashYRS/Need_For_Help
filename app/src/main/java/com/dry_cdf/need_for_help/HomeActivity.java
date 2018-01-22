@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import junit.framework.Test;
+
 public class HomeActivity extends AppCompatActivity {
     Button human_B,animal_B;
     @Override
@@ -17,16 +19,25 @@ public class HomeActivity extends AppCompatActivity {
         human_B.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentHuman = new Intent(getApplicationContext(),HumanActivity.class);
-                startActivity(intentHuman);
+                startHuman();
             }
         });
         animal_B.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentAnimal = new Intent(getApplicationContext(),AnimalActivity.class);
-                startActivity(intentAnimal);
+                startAnimal();
             }
         });
     }
+    public void startHuman(){
+
+        Intent intentHuman = new Intent(getApplicationContext(),HumanActivity.class);
+        startActivity(intentHuman);
+    }
+    public void startAnimal(){
+
+        Intent intentAnimal = new Intent(getApplicationContext(),AnimalActivity.class);
+        startActivity(intentAnimal);
+    }
 }//only design left
+
